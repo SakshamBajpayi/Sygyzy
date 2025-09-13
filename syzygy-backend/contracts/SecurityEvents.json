@@ -1,0 +1,22 @@
+
+{
+  "events": [
+    {
+      "name": "SecurityEvent",
+      "type": "event",
+      "inputs": [
+        {
+          "name": "eventType",
+          "type": "string",
+          "indexed": false
+        },
+        {
+          "name": "detailsJson",
+          "type": "string",
+          "indexed": false
+        }
+      ],
+      "anonymous": false
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+class NullChainService:
+    def __init__(self): ...
+    async def async_init(self): ...
+    def log_event(self, event_type: str, details_json: str) -> str:
+        # Return a fake tx hash or empty string
+        return ""
