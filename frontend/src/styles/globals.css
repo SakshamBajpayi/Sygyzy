@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Premium Dark Space Color Palette */
+  --void-black: #000000;
+  --space-black: #0a0a0a;
+  --deep-space: #0f0f13;
+  --nebula-dark: #121218;
+  --cosmic-dark: #16161f;
+  --stellar-gray: #1a1a26;
+  --meteor-gray: #1e1e2d;
+  --asteroid-gray: #242438;
+  
+  /* Premium Accent Colors */
+  --quantum-blue: #0084ff;
+  --plasma-blue: #00d4ff;
+  --neutron-cyan: #00ffff;
+  --aurora-green: #00ff88;
+  --laser-green: #39ff14;
+  --fusion-purple: #8a2be2;
+  --solar-orange: #ff6b35;
+  --supernova-red: #ff073a;
+  
+  /* Alert System Colors */
+  --critical-red: #ff2d55;
+  --warning-amber: #ff9500;
+  --caution-yellow: #ffcc00;
+  --secure-emerald: #30d158;
+  
+  /* Typography */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Monaco, monospace;
+  
+  /* Glass Morphism */
+  --glass-bg: rgba(26, 26, 38, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-hover: rgba(26, 26, 38, 0.25);
+  
+  /* Advanced Shadows and Glows */
+  --glow-blue: 0 0 30px rgba(0, 132, 255, 0.4);
+  --glow-cyan: 0 0 25px rgba(0, 212, 255, 0.3);
+  --glow-green: 0 0 20px rgba(0, 255, 136, 0.3);
+  
+  /* Premium Gradients */
+  --gradient-space: linear-gradient(135deg, var(--void-black) 0%, var(--deep-space) 25%, var(--nebula-dark) 50%, var(--cosmic-dark) 75%, var(--stellar-gray) 100%);
+  --gradient-button: linear-gradient(135deg, var(--quantum-blue) 0%, var(--plasma-blue) 100%);
+}
+
+body {
+  font-family: var(--font-primary);
+  background: var(--gradient-space);
+  background-attachment: fixed;
+  color: #ffffff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Premium Glass Morphism Effect */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel:hover {
+  background: var(--glass-hover);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: var(--glow-blue);
+  transform: translateY(-2px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--deep-space);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--quantum-blue), var(--plasma-blue));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(var(--plasma-blue), var(--neutron-cyan));
+}
+
+/* Premium Animations */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 132, 255, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(0, 132, 255, 0.6); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes orbit {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-orbit { animation: orbit 30s linear infinite; }
