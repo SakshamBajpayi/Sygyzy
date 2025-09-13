@@ -1,0 +1,1 @@
+‘fastapiuvicornstandardpydanticweb3python-dotenvhttpxjoblibscikit-learnorjson’
