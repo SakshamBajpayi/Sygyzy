@@ -1,68 +1,195 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+/* AryaShakti Space Cybersecurity Design System
+Space-themed colors, gradients, and effects for mission control interface
+All colors MUST be HSL.
+*/
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    /* Space Theme - Deep cosmic background */
+    --background: 220 27% 8%;
+    --foreground: 210 100% 95%;
+
+    /* Cards with subtle space glow */
+    --card: 220 25% 12%;
+    --card-foreground: 210 100% 95%;
+
+    /* Popover with cosmic depth */
+    --popover: 220 27% 10%;
+    --popover-foreground: 210 100% 95%;
+
+    /* Primary - Cosmic Blue */
+    --primary: 210 100% 60%;
+    --primary-foreground: 220 27% 8%;
+
+    /* Secondary - Deep Space Blue */
+    --secondary: 220 25% 18%;
+    --secondary-foreground: 210 100% 90%;
+
+    /* Muted - Space Console */
+    --muted: 220 20% 20%;
+    --muted-foreground: 210 50% 70%;
+
+    /* Accent - Cyan Glow */
+    --accent: 180 100% 50%;
+    --accent-foreground: 220 27% 8%;
+
+    /* Destructive - Red Alert */
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 210 100% 95%;
+
+    /* Borders and inputs with subtle glow */
+    --border: 220 20% 25%;
+    --input: 220 25% 15%;
+    --ring: 210 100% 60%;
+
+    --radius: 0.75rem;
+
+    /* Custom space gradients */
+    --gradient-cosmic: linear-gradient(135deg, hsl(220 50% 15%), hsl(240 40% 10%), hsl(260 35% 12%));
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 60%), hsl(200 100% 70%));
+    --gradient-defense: linear-gradient(135deg, hsl(120 60% 40%), hsl(160 50% 45%));
+    --gradient-attack: linear-gradient(135deg, hsl(0 80% 50%), hsl(15 90% 55%));
+    
+    /* Glowing effects */
+    --glow-primary: 0 0 20px hsl(210 100% 60% / 0.3);
+    --glow-defense: 0 0 20px hsl(120 60% 40% / 0.3);
+    --glow-attack: 0 0 20px hsl(0 80% 50% / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --animation-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
-  a:hover {
-    color: #747bff;
+
+  .dark {
+    /* Enhanced dark mode for space theme */
+    --background: 220 30% 6%;
+    --foreground: 210 100% 98%;
+
+    --card: 220 28% 10%;
+    --card-foreground: 210 100% 95%;
+
+    --popover: 220 30% 8%;
+    --popover-foreground: 210 100% 95%;
+
+    --primary: 210 100% 65%;
+    --primary-foreground: 220 30% 6%;
+
+    --secondary: 220 25% 16%;
+    --secondary-foreground: 210 100% 90%;
+
+    --muted: 220 18% 22%;
+    --muted-foreground: 210 40% 75%;
+
+    --accent: 180 100% 55%;
+    --accent-foreground: 220 30% 6%;
+
+    --destructive: 0 85% 65%;
+    --destructive-foreground: 210 100% 95%;
+
+    --border: 220 20% 22%;
+    --input: 220 25% 12%;
+    --ring: 210 100% 65%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono;
+    background: var(--gradient-cosmic);
+    min-height: 100vh;
+  }
+
+  /* Custom animations */
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 5px currentColor;
+    }
+    50% {
+      box-shadow: 0 0 20px currentColor, 0 0 30px currentColor;
+    }
+  }
+
+  @keyframes data-flow {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .animate-data-flow {
+    animation: data-flow 3s linear infinite;
+  }
+}
+
+@layer utilities {
+  .gradient-cosmic {
+    background: var(--gradient-cosmic);
+  }
+  
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-defense {
+    background: var(--gradient-defense);
+  }
+  
+  .gradient-attack {
+    background: var(--gradient-attack);
+  }
+  
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+  
+  .glow-defense {
+    box-shadow: var(--glow-defense);
+  }
+  
+  .glow-attack {
+    box-shadow: var(--glow-attack);
   }
 }

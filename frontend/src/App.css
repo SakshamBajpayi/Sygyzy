@@ -1,64 +1,42 @@
-.App {
-  text-align: center;
-  background: linear-gradient(135deg, #0B1426 0%, #1A1B4B 100%);
-  min-height: 100vh;
-  color: #00FF41;
-  font-family: 'Courier New', monospace;
-}
-
-.App-header {
-  padding: 20px;
-  border-bottom: 2px solid #00FF41;
-}
-
-.App-header h1 {
-  margin: 0;
-  font-size: 2.5em;
-  text-shadow: 0 0 10px #00FF41;
-}
-
-.connection-status {
-  margin-top: 10px;
-  padding: 10px;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-.connected {
-  background-color: rgba(0, 255, 65, 0.2);
-  border: 1px solid #00FF41;
-}
-
-.disconnected {
-  background-color: rgba(255, 59, 48, 0.2);
-  border: 1px solid #FF3B30;
-  color: #FF3B30;
-}
-
-.dashboard {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  gap: 20px;
-  padding: 20px;
-  max-width: 1400px;
+#root {
+  max-width: 1280px;
   margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
-.telemetry-card {
-  background: rgba(11, 20, 38, 0.8);
-  border: 1px solid #00FF41;
-  border-radius: 8px;
-  padding: 15px;
-  transition: all 0.3s;
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-.telemetry-card:hover {
-  box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
-  transform: translateY(-2px);
-}
-
-@media (max-width: 768px) {
-  .dashboard {
-    grid-template-columns: 1fr;
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
   }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
 }
